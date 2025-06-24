@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>app chistes_ API y Typescript</title>
+    <title>Chistes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <section>
-            <p id="chiste">Cargando chiste...</p>
-            <button id="btn">Siguiente chiste</button>
-        </section>
-
-    </main>
+    <section>
+        <h1>¿PREPARADO PARA DIVERTIRTE? </h1>
+        <div id="chiste"></div>
+        <div id="votacion" style="display: none;">
+            <p>¿Qué te parece este chiste?</p>
+            <form id="form-votacion">
+                <div class="radio-group">
+                    <input type="radio" id="score-1" name="score" value="1" class="radio-input">
+                    <label for="score-1" class="radio-label">
+                        <img src="assets/img/cara-triste_1.svg" alt="Malo" class="score-image">
+                        <span>(1)</span>
+                    </label>
+                    
+                    <input type="radio" id="score-2" name="score" value="2" class="radio-input">
+                    <label for="score-2" class="radio-label">
+                        <img src="assets/img/cara-neutra.svg" alt="Neutro" class="score-image">
+                        <span>(2)</span>
+                    </label>
+                    
+                    <input type="radio" id="score-3" name="score" value="3" class="radio-input">
+                    <label for="score-3" class="radio-label">
+                        <img src="assets/img/cara-feliz_1.svg" alt="Bueno" class="score-image">
+                        <span>(3)</span>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <button id="btn">Siguiente chiste</button>
+    </section>
     <script type="module" src="../build/main.js"></script>
-    
 </body>
 </html>
+

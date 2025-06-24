@@ -1,37 +1,31 @@
 # ===========================================
-# GITIGNORE PARA PROYECTO DAD JOKES APP
+# GITIGNORE  APP - TYPESCRIPT - API
 # ===========================================
 
 # DEPENDENCIAS
 # ------------
-# node_modules se regenera automáticamente con 'npm install'
 node_modules/
 
 # ARCHIVOS COMPILADOS
 # -------------------
-# build/ se regenera automáticamente con 'npm run build'
 build/
+dist/
 
-# VARIABLES DE ENTORNO (SI LAS USAS EN EL FUTURO)
-# ------------------------------------------------
-# .env contiene información sensible y NO debe subirse
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# ARCHIVOS DE TYPESCRIPT
+# ----------------------
+*.tsbuildinfo
+
+# LOGS
+# ----
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # ARCHIVOS DEL SISTEMA OPERATIVO
 # ------------------------------
-# macOS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-
-# Windows
 Thumbs.db
-ehthumbs.db
 Desktop.ini
+
+
 

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "start": "tsc && node index.js",
+    "start": "tsc && node build/index.js",
     "serve": "npx http-server public -p 3000 -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -10,6 +10,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('assets/img/fondo_de_pantalla_caras_felices.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 
@@ -20,6 +24,7 @@ section {
     background-color: aliceblue;
 }
 
+h1 
 #chiste {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -32,6 +37,67 @@ section {
    
    
     
+}
+
+/* Estilos para el formulario de votación */
+#votacion {
+    text-align: center;
+}
+
+#votacion p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.radio-input {
+    display: none;
+}
+
+.radio-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+    min-width: 80px;
+}
+
+.radio-label:hover {
+    border-color: #4CAF50;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.radio-input:checked + .radio-label {
+    border-color: #4CAF50;
+    background-color: #e8f5e8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.score-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.radio-label span {
+    font-weight: 600;
+    color: #333;
 }
 
 #btn {
