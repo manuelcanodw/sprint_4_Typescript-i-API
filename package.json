@@ -1,19 +1,31 @@
 {
-  "name": "typescript-project",
+  "name": "app-chistes-clima",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Aplicación web de chistes aleatorios con sistema de votación e información meteorológica",
+  "main": "build/main.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "start": "tsc && node build/index.js",
+    "start": "tsc && node build/main.js",
     "serve": "npx http-server public -p 3000 -c-1",
+    "clean": "rm -rf build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "typescript",
+    "chistes",
+    "api",
+    "clima",
+    "votacion",
+    "magic-pattern"
+  ],
+  "author": "Tu Nombre",
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

@@ -5,48 +5,122 @@
 }
 
 body {
-    
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     background-image: url('assets/img/fondo_de_pantalla_caras_felices.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
+/* Barra superior del clima */
+.weather-bar {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.city-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    padding-left: 0.5rem;
+}
+
+#weather-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 0.9rem;
+    color: #333;
+    flex: 1;
+}
+
+.weather-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.weather-value {
+    font-weight: 600;
+}
+
+/* Contenedor con Magic Pattern */
+.magic-pattern-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M855 694.5Q725 889 499.5 890t-341-194.5Q43 500 177.5 337T490 191.5q178 17.5 336.5 163t28.5 340Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M855 694.5Q725 889 499.5 890t-341-194.5Q43 500 177.5 337T490 191.5q178 17.5 336.5 163t28.5 340Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    margin: 1rem;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+    max-width: 800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 600px;
+    max-height: 90vh;
+}
 
 section {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    background-color: aliceblue;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 450px;
+    width: 100%;
+    height: 100%;
 }
 
-h1 
-#chiste {
-    font-size: 1.2rem;
-    line-height: 1.6;
+h1 {
+    font-size: 1rem;
     color: #333;
-    min-height: 80px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.chiste {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-   
-   
-    
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
-/* Estilos para el formulario de votación */
 #votacion {
     text-align: center;
 }
 
 #votacion p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
     color: #333;
     font-weight: 600;
 }
@@ -54,8 +128,8 @@ h1
 .radio-group {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .radio-input {
@@ -66,64 +140,150 @@ h1
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    border: 3px solid #ddd;
-    border-radius: 10px;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.3rem;
+    border: 2px solid #ddd;
+    border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: white;
-    min-width: 80px;
+    width: 55px;
+    height: 55px;
 }
 
 .radio-label:hover {
-    border-color: #4CAF50;
+    border-color: #FF8C00;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .radio-input:checked + .radio-label {
-    border-color: #4CAF50;
-    background-color: #e8f5e8;
+    border-color: #FF8C00;
+    background-color: #fff3e0;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 3px 10px rgba(255, 140, 0, 0.3);
 }
 
 .score-image {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     object-fit: contain;
 }
 
 .radio-label span {
     font-weight: 600;
     color: #333;
+    font-size: 0.8rem;
 }
 
 #btn {
- 
     border: none;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+    margin-top: auto;
+    align-self: center;
 }
 
 #btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(32, 54, 155, 0.3);
-    background: #90ad4d;
-    color: white;
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.6);
+    background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
 }
 
 #btn:active {
     transform: translateY(0);
 }
+
 #btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
+}
+
+.magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M852 692Q722 884 524 842.5t-360-192Q2 500 165.5 351.5t341.5-160Q685 180 833.5 340T852 692Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M852 692Q722 884 524 842.5t-360-192Q2 500 165.5 351.5t341.5-160Q685 180 833.5 340T852 692Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  }
+
+.magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M803 704.5Q736 909 508.5 894T155 689.5Q29 500 145.5 294T457 162q195 74 304 206t42 336.5Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M803 704.5Q736 909 508.5 894T155 689.5Q29 500 145.5 294T457 162q195 74 304 206t42 336.5Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  }
+  
+.magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M787 647Q670 794 506 784T193.5 637Q45 500 151.5 290t317-154.5q210.5 55.5 323 210T787 647Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M787 647Q670 794 506 784T193.5 637Q45 500 151.5 290t317-154.5q210.5 55.5 323 210T787 647Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+.magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M746.5 652Q675 804 468 859T190.5 707q-70.5-207 21-377.5T504 152q201-7 257.5 170.5t-15 329.5Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M746.5 652Q675 804 468 859T190.5 707q-70.5-207 21-377.5T504 152q201-7 257.5 170.5t-15 329.5Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  }
+
+  .magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M804 630.5Q651 761 494 772T196.5 641.5Q56 500 176 323t332-190.5q212-13.5 330.5 177t-34.5 321Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M804 630.5Q651 761 494 772T196.5 641.5Q56 500 176 323t332-190.5q212-13.5 330.5 177t-34.5 321Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  }
+  .magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M839.5 706Q738 912 535.5 850.5t-290-206Q158 500 220 311t255-145q193 44 329.5 189t35 351Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M839.5 706Q738 912 535.5 850.5t-290-206Q158 500 220 311t255-145q193 44 329.5 189t35 351Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  }
+  .magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M817.5 659Q683 818 489 836.5t-295-159Q93 500 215.5 360t297-162.5q174.5-22.5 307 140t-2 321.5Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M817.5 659Q683 818 489 836.5t-295-159Q93 500 215.5 360t297-162.5q174.5-22.5 307 140t-2 321.5Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  }
+  .magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M837 692Q722 884 493.5 895T148 703Q31 500 179.5 350.5t317.5-144Q666 212 809 356t28 336Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M837 692Q722 884 493.5 895T148 703Q31 500 179.5 350.5t317.5-144Q666 212 809 356t28 336Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  }
+  
+  .magicpattern { 
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M819 635.5Q656 771 490.5 787.5T211 652q-114-152 7.5-291t314-195q192.5-56 321 139T819 635.5Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22%23f6f745%22 d=%22M819 635.5Q656 771 490.5 787.5T211 652q-114-152 7.5-291t314-195q192.5-56 321 139T819 635.5Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 }

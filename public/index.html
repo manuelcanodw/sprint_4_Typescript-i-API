@@ -1,41 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chistes</title>
+    <title>App de Chistes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
-        <h1>¿PREPARADO PARA DIVERTIRTE? </h1>
-        <div id="chiste"></div>
-        <div id="votacion" style="display: none;">
-            <p>¿Qué te parece este chiste?</p>
-            <form id="form-votacion">
-                <div class="radio-group">
-                    <input type="radio" id="score-1" name="score" value="1" class="radio-input">
-                    <label for="score-1" class="radio-label">
-                        <img src="assets/img/cara-triste_1.svg" alt="Malo" class="score-image">
-                        <span>(1)</span>
-                    </label>
-                    
-                    <input type="radio" id="score-2" name="score" value="2" class="radio-input">
-                    <label for="score-2" class="radio-label">
-                        <img src="assets/img/cara-neutra.svg" alt="Neutro" class="score-image">
-                        <span>(2)</span>
-                    </label>
-                    
-                    <input type="radio" id="score-3" name="score" value="3" class="radio-input">
-                    <label for="score-3" class="radio-label">
-                        <img src="assets/img/cara-feliz_1.svg" alt="Bueno" class="score-image">
-                        <span>(3)</span>
-                    </label>
-                </div>
-            </form>
+    <!-- Barra superior del clima -->
+    <div id="weather-bar" class="weather-bar">
+        <div id="city-name" class="city-name">Barcelona</div>
+        <div id="weather-info">
+            <span>Cargando clima...</span>
         </div>
-        <button id="btn">Siguiente chiste</button>
-    </section>
+    </div>
+    
+    <!-- Contenedor principal -->
+    <div class="magic-pattern-container">
+        <section>
+            <h1>¿PREPARADO PARA REIR?</h1>
+            
+            <div id="chiste" class="chiste"></div>
+            <div id="votacion" style="display: none;">
+                <p>¿Qué te parece este chiste?</p>
+                <form id="form-votacion">
+                    <div class="radio-group">
+                        <input type="radio" id="score-1" name="score" value="1" class="radio-input">
+                        <label for="score-1" class="radio-label">
+                            <img src="assets/img/cara-triste_1.svg" alt="Malo" class="score-image">
+                        </label>
+                        
+                        <input type="radio" id="score-2" name="score" value="2" class="radio-input">
+                        <label for="score-2" class="radio-label">
+                            <img src="assets/img/cara-neutra.svg" alt="Neutro" class="score-image">
+                        </label>
+                        
+                        <input type="radio" id="score-3" name="score" value="3" class="radio-input">
+                        <label for="score-3" class="radio-label">
+                            <img src="assets/img/cara-feliz_1.svg" alt="Bueno" class="score-image">
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <button id="btn">Siguiente chiste</button>
+        </section>
+    </div>
     <script type="module" src="../build/main.js"></script>
 </body>
 </html>
